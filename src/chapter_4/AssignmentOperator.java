@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter4;
+package chapter_4;
 
 /**
  *
  * @author thetkhine
  */
-public class OperatorPrecedence {
+public class AssignmentOperator {
     public static void main(String[] args) {
-        int a = (10 + 2) * 5;
-        boolean data = (10+2)*5 > 65 && a != 0;
-        System.out.println("a "+a);
+        int a;
+        a = 10+2;
         
+        //a = false;
+        int b ;
+        a = b = 2;
+        
+        System.out.println("a "+a + " b "+b);
     }
 }

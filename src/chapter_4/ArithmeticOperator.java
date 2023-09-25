@@ -1,4 +1,4 @@
-package chapter4;
+package chapter_4;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
