@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter3;
+package chapter_3;
 
 /**
  *
  * @author thetkhine
  */
-public class MultiDimensionalArray {
+public class BooleanType {
     public static void main(String[] args) {
-        int[][] matrix = {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9,10,11,12}
-        };
-        System.out.println("Matrix "+matrix[2]);
-        System.out.println("Matrix "+matrix[2][0]);
+        boolean flag = true;
+        flag = false;
+        
+        System.out.println("Boolean "+ flag);
+        
+        //int i = flag;
+        //float f  = flag;
     }
 }

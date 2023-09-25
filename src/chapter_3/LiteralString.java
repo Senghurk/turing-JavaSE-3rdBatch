@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter3;
+package chapter_3;
 
 /**
  *
  * @author thetkhine
  */
-public class BooleanType {
+public class LiteralString {
     public static void main(String[] args) {
-        boolean flag = true;
-        flag = false;
+        String str = "Hello";
+        String str2 = "Hello";
+        String str3 = new String("Hello");
         
-        System.out.println("Boolean "+ flag);
-        
-        //int i = flag;
-        //float f  = flag;
+        System.out.println("Str == str2 "+ (str==str2));
+         System.out.println("Str == str3 "+ (str==str3));
     }
 }

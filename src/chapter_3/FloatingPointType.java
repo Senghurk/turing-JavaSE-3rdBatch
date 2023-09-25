@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter3;
+package chapter_3;
 
 import java.math.BigDecimal;
 

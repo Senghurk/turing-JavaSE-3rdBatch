@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter3;
+package chapter_3;
 
 /**
  *
  * @author thetkhine
  */
-public class LiteralString {
+public class Type {
     public static void main(String[] args) {
-        String str = "Hello";
-        String str2 = "Hello";
-        String str3 = new String("Hello");
+        boolean flag = true;
+        flag = false;
         
-        System.out.println("Str == str2 "+ (str==str2));
-         System.out.println("Str == str3 "+ (str==str3));
+        //flag = "Hello";
+        int a = 3;
+        int b = 4;
+        int c = a + b;
+        //c = flag + flag;
+        String str = "Hello";
+        //str = str * 3;
     }
 }
