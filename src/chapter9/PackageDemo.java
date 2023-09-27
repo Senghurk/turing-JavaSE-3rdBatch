@@ -5,7 +5,7 @@
  */
 package chapter9;
 
-import chapter8.Human;
+import chapter_8.Human;
 //import chapter8.*;
 /**
  *
