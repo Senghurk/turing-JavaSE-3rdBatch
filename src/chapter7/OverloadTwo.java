@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package chapter7;
-import chapter6.Stack;
+import chapter_6.Stack;
 /**
  *
  * @author thetkhine
