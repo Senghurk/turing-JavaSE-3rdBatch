@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter12;
+package chapter_12;
 
-import static chapter12.Gender.Male;
+import static chapter_12.Gender.Male;
 
 /**
  *
