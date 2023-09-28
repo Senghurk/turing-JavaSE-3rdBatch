@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter20;
+package chapter_20;
 
 import java.util.BitSet;
 
