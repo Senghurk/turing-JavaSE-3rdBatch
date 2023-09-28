@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter23;
+package chapter_23;
 
 import java.io.IOException;
 import java.io.InputStream;
