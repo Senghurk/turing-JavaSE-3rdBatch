@@ -3,25 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter21;
+package chapter_21;
 
-import java.io.BufferedInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
  * @author thetkhine
  */
-public class DataOutputStreamDemo {
+public class DeSeriazliationDemo {
     public static void main(String[] args) {
-        try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("./test/test.dat"))
-          )
+        
+        Human h ;
+        
+        try(ObjectInputStream out = new ObjectInputStream(new FileInputStream("./test/obj.dat")))
         {
-            dout.writeDouble(1234);
-            dout.writeBytes("Hello");
-            dout.writeInt(100);
+            h =(Human)out.readObject();
+            
+            System.out.println("Name "+h.name + " Age "+h.age);
         }
         catch(Exception e)
         {
