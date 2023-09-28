@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter22;
+package chapter_22;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
@@ -19,23 +20,21 @@ import java.util.logging.Logger;
  *
  * @author thetkhine
  */
-public class MappedChannelWriteDemo {
+public class ChannelWriteDemo {
     public static void main(String[] args) {
-        Path filePath = Paths.get("./test/hello1.txt");
+         Path filePath = Paths.get("./test/hello.txt");
         try(FileChannel fCh = (FileChannel)Files.newByteChannel(filePath,
-                        StandardOpenOption.WRITE,
-                        StandardOpenOption.READ,
-                        StandardOpenOption.CREATE
-                        ))
+                            StandardOpenOption.CREATE,
+                            StandardOpenOption.WRITE))
         {
-           
-            MappedByteBuffer mBuffer = fCh.map(FileChannel.MapMode.READ_WRITE, 0, 26);
-            
+            ByteBuffer byteBuffer = ByteBuffer.allocate(26);
             for (int i = 0; i < 26; i++) {
-                mBuffer.put((byte)('A'+i));
+                byteBuffer.put((byte)('A'+i));
             }
+            byteBuffer.rewind();
+            fCh.write(byteBuffer);
         } catch (IOException ex) {
-            Logger.getLogger(MappedChannelWriteDemo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MappedChannelDemo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
