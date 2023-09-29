@@ -6,7 +6,7 @@
 
 package chapter31.demoapp.ui;
 
-import chapter31.demoapp.service.App;
+import chapter_31.demoapp.service.App;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;

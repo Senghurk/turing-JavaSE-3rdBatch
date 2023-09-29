@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter31.demoapp.service;
+package chapter_31.demoapp.service;
+
+import chapter31.demoapp.service.model.Item;
+import java.util.ArrayList;
 
 /**
  *
  * @author thetkhine
  */
-public interface AuthService {
-    boolean isAuthOk(String userName, String password);
+public interface ItemService {
+    void addItem(Item item);
+    ArrayList<Item> getAllItems();
 }
