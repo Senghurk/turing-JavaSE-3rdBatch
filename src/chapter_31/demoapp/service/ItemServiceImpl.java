@@ -5,7 +5,7 @@
  */
 package chapter_31.demoapp.service;
 
-import chapter31.demoapp.service.model.Item;
+import chapter_31.demoapp.service.model.Item;
 import java.util.ArrayList;
 import java.util.List;
 

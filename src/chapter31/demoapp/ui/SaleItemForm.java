@@ -6,7 +6,7 @@
 package chapter31.demoapp.ui;
 
 import chapter_31.demoapp.service.App;
-import chapter31.demoapp.service.model.Item;
+import chapter_31.demoapp.service.model.Item;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
