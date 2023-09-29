@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter27;
+package chapter_27;
 
 import java.awt.Graphics;
 import java.awt.Image;
