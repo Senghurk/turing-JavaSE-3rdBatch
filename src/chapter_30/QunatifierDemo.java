@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter30;
+package chapter_30;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,32 +12,30 @@ import java.util.regex.Pattern;
  *
  * @author thetkhine
  */
-public class BoundaryDemo {
+public class QunatifierDemo {
     public static void main(String[] args) {
-        String input = "Hello ";
-        Pattern pattern = Pattern.compile("^Hello$");
+        String input = "12345";
+        Pattern pattern = Pattern.compile("\\d{3,5}");
         Matcher matcher = pattern.matcher(input);
         
         System.out.println("Find "+matcher.find());
         
-        
-        input = "A dogbite";
-        pattern = Pattern.compile("\\bdog\\B");
+        input = "1234567";
+        pattern = Pattern.compile("^\\d{3,5}$");
         matcher = pattern.matcher(input);
         
-        System.out.println("Find \\b"+ matcher.find());
+        System.out.println("Find 1234567 "+matcher.find());
         
-        input = "dogbite";
-        pattern = Pattern.compile("\\Adog");
+        input = "apple";
+        pattern = Pattern.compile("(apple|orange)");
         matcher = pattern.matcher(input);
         
-        System.out.println("Find \\Adog "+ matcher.find());
+        System.out.println("Find (apple|orange) "+matcher.find());
         
-        
-        input = "dog dog";
-        pattern = Pattern.compile("\\Gdog");
+        input = "orange";
+        pattern = Pattern.compile("(apple|orange)");
         matcher = pattern.matcher(input);
         
-        System.out.println("Find \\Gdog "+ matcher.find() +" start "+matcher.start());
+        System.out.println("Find (apple|orange) "+matcher.find());
     }
 }
