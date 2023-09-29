@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package chapter31.demoapp.ui;
+package chapter_31.demoapp.ui;
 
 import chapter_31.demoapp.service.App;
 import java.awt.Dimension;

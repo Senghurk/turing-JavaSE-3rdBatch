@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter31.demoapp.ui;
+package chapter_31.demoapp.ui;
 
 import chapter_31.demoapp.service.App;
 import chapter_31.demoapp.service.model.Item;
