@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter28;
+package chapter_28;
 
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.RecursiveAction;
 
 /**
  *
  * @author thetkhine
  */
-class SumTask extends RecursiveTask<Double>
+class SquareDivideConquer extends RecursiveAction
 {
 
     double vals[];
     int start,end;
     int treshold = 10;
-    SumTask(double[] vals, int start, int end)
+    SquareDivideConquer(double[] vals, int start, int end)
     {
         this.vals = vals;
         this.start = start;
@@ -27,33 +27,27 @@ class SumTask extends RecursiveTask<Double>
     }
     
     @Override
-    protected Double compute() {
-        double sum = 0;
+    protected void compute() {
         if( end-start < treshold)
         {
             //compute
             System.out.println("Compute start "+start + " end "+end);
             for (int i = start; i < end; i++) {
-                sum+= this.vals[i];
+                this.vals[i] *=2;
             }
         }
         else//divide
         {
             System.out.println("Divide ");
             int middle = (start+end)/2;
-            SumTask subTask1 = new SumTask(vals, start, middle);
-            SumTask subTask2 = new SumTask(vals, middle+1, end);
-            
-            subTask1.fork();
-            subTask2.fork();
-            
-            sum += subTask1.join() + subTask2.join();
-            
+            invokeAll(
+                    new SquareDivideConquer(vals, start, middle),
+                    new SquareDivideConquer(vals, middle+1, end)
+                    );
         }
-        return sum;
     }
 }
-public class RecursiveTaskDemo {
+public class ForkJoinDemo {
     public static void main(String[] args) {
         ForkJoinPool pool = new ForkJoinPool();
         Random random = new Random();
@@ -62,9 +56,13 @@ public class RecursiveTaskDemo {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100);
         }
-        SumTask task = new SumTask(arr,0,arr.length);
-        System.out.println("Before invoke");
-        double sum = pool.invoke(task);
-        System.out.println("Sum "+ sum);
+        
+        SquareDivideConquer task = new SquareDivideConquer(arr,0, arr.length);
+        pool.invoke(task);
+        
+         for (int i = 0; i < arr.length; i++) {
+             System.out.println("Arr "+arr[i]);
+        }
+        
     }
 }

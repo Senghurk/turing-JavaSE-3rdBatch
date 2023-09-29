@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter28;
+package chapter_28;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
